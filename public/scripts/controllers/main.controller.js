@@ -8,8 +8,9 @@ myApp.controller('MainController',['EmailFactory', '$scope', 'alertify', functio
   // defining this
   const self = this;
 
-
-
+  self.submitRequest = (form) => {
+    console.log(form);
+  }
 
 
 

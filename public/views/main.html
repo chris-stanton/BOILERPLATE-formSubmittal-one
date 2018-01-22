@@ -1,5 +1,31 @@
 
 <section>
-<h1>works!!</h1>
+
+  <form>
+    <div class="">
+      <label> First Name </label>
+      <input type="text" ng-model="mc.form.firstName">
+    </div>
+    <div class="">
+      <label> Last Name </label>
+      <input type="text" ng-model="mc.form.lastName">
+    </div>
+    <div class="">
+      <label> Email </label>
+      <input type="email" ng-model="mc.form.contactEmail">
+    </div>
+    <div class="">
+      <label> Phone Number </label>
+      <input type="tel" ng-model="mc.form.contactPhone">
+    </div>
+    <div class="">
+      <label> Comments </label>
+      <input type="text" ng-model="mc.form.comments">
+    </div>
+    <div class="button-container">
+      <button type="button" ng-click="mc.submitRequest(mc.form)"> Submit </button>
+    </div>
+  </form>
+
 </section>
 <!-- <footer ng-include="'./views/templates/footer.html'"></footer> -->
