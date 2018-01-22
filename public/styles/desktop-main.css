@@ -1,0 +1,14 @@
+
+/*reset*/
+* {
+  padding: 0px;
+  margin: 0px;
+  font: 12px;
+  font-family: serif sans-serif;
+}
+
+/*setting app display size*/
+body {
+  height: 100vh;
+  width: 100vw;
+}
