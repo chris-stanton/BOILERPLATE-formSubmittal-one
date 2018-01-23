@@ -24,7 +24,7 @@ main {
 header {
   display: flex;
   flex-direction: row;
-  height: 15vh;
+  height: 12vh;
   width: 100vw;
   align-items: center;
   background-color: #b0b0b0;
@@ -38,35 +38,49 @@ header img {
 form {
   display: flex;
   flex-direction: column;
-  height: 75vh;
+  height: 82vh;
   width: 100vw;
-  /* justify-content: center; */
-  /* align-items: flex-start; */
 }
-form span {
+form .error-message-container {
   display: flex;
   flex-direction: row;
   height: 5vh;
   width: 100vw;
   justify-content: center;
   align-items: center;
-  /* background-color: red; */
 }
 form section {
   width: 50%;
   margin: 10px auto;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 form section h6 {
   font-style: italic;
   margin: 5px;
+}
+form .button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+form .button-container button {
+  height: 30px;
+  width: 80px;
+  background-color: #1c44d0;
+  color: #ffffff;
 }
 
 
 footer {
   display: flex;
   flex-direction: row;
-  height: 10vh;
+  height: 6vh;
   width: 100vw;
   align-items: center;
   background-color: #b0b0b0;
+}
+footer h6 {
+  padding-left: 20px;
 }
