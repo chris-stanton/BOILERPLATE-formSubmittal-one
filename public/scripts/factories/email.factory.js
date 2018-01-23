@@ -7,15 +7,16 @@ myApp.factory('EmailFactory',['$http', '$window', 'alertify',function($http, $wi
   alertify.logPosition('bottom, right');
 
   function postForm(form) {
+    alertify.success('Sending request')
     $http({
-        method: 'POST',
-        url: '/email/sendEmail',
-        data: form
+      method: 'POST',
+      url: '/email/sendEmail',
+      data: form
     }).then(function(response){
-        alertify.success('Form has been submitted')
+      alertify.success('Form has been submitted');
     }).catch(function(error) {
-        alertify.error('Error sending form. Pleae try again')
-        console.log('error sending email request to server: ', error);
+      alertify.error('Error sending form. Pleae try again')
+      console.log('error sending email request to server: ', error);
     });
   };
 

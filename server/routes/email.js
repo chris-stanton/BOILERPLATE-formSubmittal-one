@@ -7,6 +7,8 @@ const pg = require('pg');
 const nodemailer = require('nodemailer');
 const smtpTransport = require('nodemailer-smtp-transport');
 
+const emailTemp = require('../templates/email.js')
+
 
 router.post('/sendEmail', function(req, res){
   let form = req.body;
@@ -23,9 +25,9 @@ router.post('/sendEmail', function(req, res){
 
   // setup email data with unicode symbols
   let mailOptions = {
-    from: '"Chris Form" <development.testing84@yahoo.com>', // sender address
+    from: '"Chris Stanton Form Example One" <'+process.env.ACCOUNT_NAME+'>', // sender address
     to: 'cstanton0760@yahoo.com', // list of receivers
-    subject: 'Hello ✔', // Subject line
+    subject: 'Form Example One', // Subject line
     html: '<b>Hello world?</b>' // html body
   };
 
