@@ -1,18 +1,38 @@
 
-myApp.controller('MainController',['EmailFactory', '$scope', 'alertify', function(EmailFactory, $scope, alertify) {
+myApp.controller('MainController',['EmailFactory', '$scope', function(EmailFactory, $scope) {
 
   console.log('MainController running...');
 
-  // setting notifiaction screen position
-  // alertify.logPosition('bottom, right');
-  // defining this
   const self = this;
 
   self.submitRequest = (form) => {
     console.log(form);
+    if(form.firstName == undefined) {
+      self.errorMessage = 'Missing First Name';
+    } else if(form.lastName == undefined){
+      self.errorMessage = 'Missing Last Name';
+    } else if(form.contactAddress == undefined){
+      self.errorMessage = 'Missing Street Address';
+    } else if(form.contactCity == undefined){
+      self.errorMessage = 'Missing City';
+    } else if(form.contactState == undefined){
+      self.errorMessage = 'Missing State';
+    } else if(form.contactZip == undefined){
+      self.errorMessage = 'Missing Zip Code';
+    } else if(form.contactEmail == undefined){
+      self.errorMessage = 'Missing Email';
+    } else if(form.contactPhone == undefined){
+      self.errorMessage = 'Missing Phone Number';
+    } else if(form == undefined){
+      self.errorMessage = 'Please complete the form';
+    } else {
+      EmailFactory.postForm(form);
+      self.form = {};
+    }
+
   }
 
-self.errorMessage = "errors go here"
+
 
 
 }]); // end myAPP.controller

@@ -5,7 +5,7 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 5000;
-require('dotenv').config()
+
 
 // defining server side routes
 const email = require('./server/routes/email.js');
