@@ -2,6 +2,7 @@
 <header ng-include="'./views/templates/header.html'"></header>
 
   <form>
+    <span class="error-message-container"><h5> {{mc.errorMessage}} </h5></span>
     <section>
       <h6> Contact Name </h6>
       <div>
@@ -19,15 +20,15 @@
       <div>
         <div>
           <label> Address </label>
-          <input type="text" ng-model="mc.form.contactAddress">
+          <input type="Address" ng-model="mc.form.contactAddress">
         </div>
         <div>
           <label> City </label>
-          <input type="text" ng-model="mc.form.contactCity">
+          <input type="Address" ng-model="mc.form.contactCity">
         </div>
         <div>
           <label> State </label>
-          <input type="text" ng-model="mc.form.contactState">
+          <input type="Address" ng-model="mc.form.contactState">
         </div>
         <div>
           <label> Zip </label>
@@ -49,7 +50,8 @@
     <section>
       <div>
         <label> Comments </label>
-        <input type="text" ng-model="mc.form.comments">
+        <!-- <input type="text" ng-model="mc.form.comments"> -->
+        <textarea name="name" rows="8" cols="30" ng-model="mc.form.comments"></textarea>
       </div>
     </section>
     <section class="button-container">

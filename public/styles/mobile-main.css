@@ -1,9 +1,11 @@
 
 @media(max-width: 850px) {
 
+  form section {
+    width: 80%;
+  }
 
 
-  
 
 
 }

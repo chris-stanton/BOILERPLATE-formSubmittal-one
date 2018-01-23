@@ -12,7 +12,7 @@ myApp.controller('MainController',['EmailFactory', '$scope', 'alertify', functio
     console.log(form);
   }
 
-
+self.errorMessage = "errors go here"
 
 
 }]); // end myAPP.controller
