@@ -40,7 +40,8 @@ form {
   flex-direction: column;
   height: 75vh;
   width: 100vw;
-  justify-content: center;
+  /* justify-content: center; */
+  /* align-items: flex-start; */
 }
 form span {
   display: flex;
@@ -54,7 +55,6 @@ form span {
 form section {
   width: 50%;
   margin: 10px auto;
-  border: 1px solid black;
 }
 form section h6 {
   font-style: italic;

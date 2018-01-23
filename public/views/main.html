@@ -37,22 +37,24 @@
       </div>
 
       <div>
-        <label> Email </label>
-        <input type="email" ng-model="mc.form.contactEmail">
-      </div>
+        <div>
+          <label> Email </label>
+          <input type="email" ng-model="mc.form.contactEmail">
+        </div>
 
-      <div>
-        <label> Phone Number </label>
-        <input type="tel" ng-model="mc.form.contactPhone">
+        <div>
+          <label> Phone Number </label>
+          <input type="tel" ng-model="mc.form.contactPhone">
+        </div>
       </div>
     </section>
 
     <section>
-      <div>
-        <label> Comments </label>
-        <!-- <input type="text" ng-model="mc.form.comments"> -->
-        <textarea name="name" rows="8" cols="30" ng-model="mc.form.comments"></textarea>
-      </div>
+      <h6> Comments </h6>
+        <div>
+          <!-- <input type="text" ng-model="mc.form.comments"> -->
+          <textarea name="name" rows="8" cols="30" ng-model="mc.form.comments"></textarea>
+        </div>
     </section>
     <section class="button-container">
       <button type="button" ng-click="mc.submitRequest(mc.form)"> Submit </button>

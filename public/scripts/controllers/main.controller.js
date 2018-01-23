@@ -6,6 +6,7 @@ myApp.controller('MainController',['EmailFactory', '$scope', function(EmailFacto
   const self = this;
 
   self.submitRequest = (form) => {
+    self.form = {};
     console.log(form);
     if(form.firstName == undefined) {
       self.errorMessage = 'Missing First Name';
@@ -20,7 +21,7 @@ myApp.controller('MainController',['EmailFactory', '$scope', function(EmailFacto
     } else if(form.contactZip == undefined){
       self.errorMessage = 'Missing Zip Code';
     } else if(form.contactEmail == undefined){
-      self.errorMessage = 'Missing Email';
+      self.errorMessage = 'Missing or invalid Email';
     } else if(form.contactPhone == undefined){
       self.errorMessage = 'Missing Phone Number';
     } else if(form == undefined){

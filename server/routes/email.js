@@ -7,9 +7,6 @@ const pg = require('pg');
 const nodemailer = require('nodemailer');
 const smtpTransport = require('nodemailer-smtp-transport');
 
-const emailTemp = require('../templates/email.js')
-
-
 router.post('/sendEmail', function(req, res){
   let form = req.body;
   console.log(form);
@@ -28,7 +25,13 @@ router.post('/sendEmail', function(req, res){
     from: '"Chris Stanton Form Example One" <'+process.env.ACCOUNT_NAME+'>', // sender address
     to: 'cstanton0760@yahoo.com', // list of receivers
     subject: 'Form Example One', // Subject line
-    html: '<b>Hello world?</b>' // html body
+    html: '<span><h2> First Name: </h2><h3>' + form.firstName + '</h3></span>' +
+          '<span><h2> Last Name: </h2><h3>' + form.lastName + '</h3></span>' +
+          '<span><h2> Phone: </h2><h3>' + form.contactPhone + '</h3></span>' +
+          '<span><h2> Email: </h2><h3>' + form.contactEmail + '</h3></span>' +
+          '<span><h2> Address: </h2><h4>' + form.contactAddress + '<br>' +
+          form.contactCity + ' ' +  form.contactState + ', ' + form.contactZip + '</h4></span>' +
+          '<span><h2> Comments: </h2><p>' + form.comments + '</p></span>'
   };
 
   // send mail with defined transport object
