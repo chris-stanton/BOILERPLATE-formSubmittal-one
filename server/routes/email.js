@@ -25,6 +25,12 @@ router.post('/sendEmail', function(req, res){
     from: '"Chris Stanton Form Example One" <'+process.env.ACCOUNT_NAME+'>', // sender address
     to: 'cstanton0760@yahoo.com', // list of receivers
     subject: 'Form Example One', // Subject line
+    attachments: [
+      {   // file on disk as an attachment
+        filename: 'favicon.ico',
+        path: './public/assets/images/favicon.ico' 
+      }
+    ],
     html: '<span><h2> First Name: </h2><h3>' + form.firstName + '</h3></span>' +
           '<span><h2> Last Name: </h2><h3>' + form.lastName + '</h3></span>' +
           '<span><h2> Phone: </h2><h3>' + form.contactPhone + '</h3></span>' +
