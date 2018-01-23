@@ -19,6 +19,7 @@ main {
   flex-direction: column;
   height: 100%;
   width: 100%;
+  color: #ffffff;
 }
 
 header {
@@ -40,6 +41,10 @@ form {
   flex-direction: column;
   height: 82vh;
   width: 100vw;
+  justify-content: center;
+  background-image: url('../assets/images/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 form .error-message-container {
   display: flex;
@@ -50,15 +55,32 @@ form .error-message-container {
   align-items: center;
 }
 form section {
-  width: 50%;
+  display: flex;
+  flex-direction: column;
   margin: 10px auto;
   justify-content: center;
-  align-items: center;
-  align-content: center;
+  width: 40vw;
+}
+.border{
+  border: 1px solid #000000;
+  border-radius: 10px;
+  padding: 30px 20px;
 }
 form section h6 {
   font-style: italic;
   margin: 5px;
+}
+form .container-input {
+  display: flex;
+  padding-left: 70px;
+}
+.container-input label {
+
+  width: 60px;
+}
+form textarea {
+  background-color: transparent;
+  color: #ffffff;
 }
 form .button-container {
   display: flex;
