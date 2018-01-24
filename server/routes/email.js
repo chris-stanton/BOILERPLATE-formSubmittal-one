@@ -11,6 +11,19 @@ router.post('/sendEmail', function(req, res){
   let form = req.body;
   console.log(form);
 
+
+
+  var fs = require('fs');
+  var pdf = require('html-pdf');
+  var html = fs.readFileSync('./server/templates/email.html', 'utf8');
+  var options = { format: 'Letter' };
+  pdf.create(html, options).toFile('./server/pdf/'+ form.firstName + form.lastName + '.pdf', function(err, res) {
+    if (err) return console.log('html-pdf error: ', err);
+    console.log(res); // { filename: '/app/businesscard.pdf' }
+  });
+
+
+
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
     service: 'yahoo',
@@ -27,23 +40,23 @@ router.post('/sendEmail', function(req, res){
     subject: 'Form Example One', // Subject line
     attachments: [
       {   // file on disk as an attachment
-        filename: 'favicon.ico',
-        path: './public/assets/images/favicon.ico' 
+        filename: form.firstName + form.lastName + '.pdf',
+        path: './server/pdf/'+ form.firstName + form.lastName + '.pdf'
       }
-    ],
-    html: '<span><h2> First Name: </h2><h3>' + form.firstName + '</h3></span>' +
-          '<span><h2> Last Name: </h2><h3>' + form.lastName + '</h3></span>' +
-          '<span><h2> Phone: </h2><h3>' + form.contactPhone + '</h3></span>' +
-          '<span><h2> Email: </h2><h3>' + form.contactEmail + '</h3></span>' +
-          '<span><h2> Address: </h2><h4>' + form.contactAddress + '<br>' +
-          form.contactCity + ' ' +  form.contactState + ', ' + form.contactZip + '</h4></span>' +
-          '<span><h2> Comments: </h2><p>' + form.comments + '</p></span>'
+    ]
+    // html: '<span><h2> First Name: </h2><h3>' + form.firstName + '</h3></span>' +
+    //       '<span><h2> Last Name: </h2><h3>' + form.lastName + '</h3></span>' +
+    //       '<span><h2> Phone: </h2><h3>' + form.contactPhone + '</h3></span>' +
+    //       '<span><h2> Email: </h2><h3>' + form.contactEmail + '</h3></span>' +
+    //       '<span><h2> Address: </h2><h4>' + form.contactAddress + '<br>' +
+    //       form.contactCity + ' ' +  form.contactState + ', ' + form.contactZip + '</h4></span>' +
+    //       '<span><h2> Comments: </h2><p>' + form.comments + '</p></span>'
   };
 
   // send mail with defined transport object
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      return console.log(error);
+      return console.log('nodemailer error: ', error);
     }
     console.log('Message sent: %s', info.messageId);
     // Preview only available when sending through an Ethereal account
