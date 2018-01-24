@@ -16,14 +16,14 @@ router.post('/sendEmail', function(req, res){
           '<span><h2> Last Name: </h2><h3>' + form.lastName + '</h3></span>' +
           '<span><h2> Phone: </h2><h3>' + form.contactPhone + '</h3></span>' +
           '<span><h2> Email: </h2><h3>' + form.contactEmail + '</h3></span>' +
-          '<span><h2> Address: </h2><h4>' + form.contactAddress + '<br>' +
-          form.contactCity + ' ' +  form.contactState + ', ' + form.contactZip + '</h4></span>' +
+          '<span><h2> Address: </h2><h4>' + form.contactAddress + '<br>' + form.contactCity + ' ' +  form.contactState + ', ' + form.contactZip + '</h4></span>' +
           '<span><h2> Comments: </h2><p>' + form.comments + '</p></span>';
 
-          
   // const html = require('../../server/templates/template.email.js');
   // const html = fs.readFileSync('./server/templates/email.html', 'utf8'); // html-pdf html template
-  const options = { format: 'Letter' }; // html-pdf options
+
+  // html-pdf options
+  const options = { format: 'Letter' };
 
   function sendEmail(form) {
     // create reusable transporter object using the default SMTP transport
@@ -45,13 +45,6 @@ router.post('/sendEmail', function(req, res){
           path: './server/pdf/'+ form.firstName + form.lastName + '.pdf'
         }
       ]
-    //   html: '<span><h2> First Name: </h2><h3>' + form.firstName + '</h3></span>' +
-    //         '<span><h2> Last Name: </h2><h3>' + form.lastName + '</h3></span>' +
-    //         '<span><h2> Phone: </h2><h3>' + form.contactPhone + '</h3></span>' +
-    //         '<span><h2> Email: </h2><h3>' + form.contactEmail + '</h3></span>' +
-    //         '<span><h2> Address: </h2><h4>' + form.contactAddress + '<br>' +
-    //         form.contactCity + ' ' +  form.contactState + ', ' + form.contactZip + '</h4></span>' +
-    //         '<span><h2> Comments: </h2><p>' + form.comments + '</p></span>'
     };
     // send mail with defined transport object
     transporter.sendMail(mailOptions, (error, info) => {

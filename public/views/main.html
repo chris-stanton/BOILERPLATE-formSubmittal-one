@@ -1,13 +1,13 @@
 
 <header ng-include="'./views/templates/header.html'"></header>
 
-  <form>
+  <form name="myForm">
     <span class="error-message-container"><h5> {{mc.errorMessage}} </h5></span>
     <section class="border">
       <h6> Contact Name </h6>
       <div class="container-input">
         <label> First </label>
-        <input type="text" ng-model="mc.form.firstName">
+        <input type="text" name="firstName" ng-model="mc.form.firstName" required>{{myForm.firstName.$valid}}
       </div>
       <div class="container-input">
         <label> Last </label>
@@ -86,14 +86,14 @@
         </div>
         <div class="container-input">
           <label> Zip </label>
-          <input type="number" ng-model="mc.form.contactZip">
+          <input type="number" ng-model="mc.form.contactZip" ng-maxlength="5">
         </div>
       </div>
 
       <div>
         <div class="container-input">
           <label> Email </label>
-          <input type="email" ng-model="mc.form.contactEmail">
+          <input type="email" name="email" ng-model="mc.form.contactEmail" required>{{myForm.email.$valid}}
         </div>
 
         <div class="container-input">
