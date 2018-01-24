@@ -8,9 +8,9 @@ myApp.controller('MainController',['EmailFactory', '$scope', function(EmailFacto
   self.submitRequest = (form) => {
     self.form = {};
     console.log(form);
-    if(form.contactAddress == undefined) {
+    if(form.firstName == undefined) {
       self.errorMessage = 'Missing First Name';
-    } else if(form.contactAddress == undefined){
+    } else if(form.lastName == undefined){
       self.errorMessage = 'Missing Last Name';
     } else if(form.contactAddress == undefined){
       self.errorMessage = 'Missing Street Address';

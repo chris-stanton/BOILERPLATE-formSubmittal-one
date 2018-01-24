@@ -11,7 +11,7 @@
       </div>
       <div class="container-input">
         <label> Last </label>
-        <input type="text" ng-model="mc.form.lastName">
+        <input type="text" name="lastName" ng-model="mc.form.lastName" required>{{myForm.lastName.$valid}}
       </div>
     </section>
 
@@ -20,16 +20,15 @@
       <div>
         <div class="container-input">
           <label> Street </label>
-          <input type="Address" ng-model="mc.form.contactAddress">
+          <input type="Address" name="street" ng-model="mc.form.contactAddress" required>{{myForm.street.$valid}}
         </div>
         <div class="container-input">
           <label> City </label>
-          <input type="Address" ng-model="mc.form.contactCity">
+          <input type="Address" name="city" ng-model="mc.form.contactCity" required>{{myForm.city.$valid}}
         </div>
         <div class="container-input">
           <label> State </label>
-          <!-- <input type="Address" ng-model="mc.form.contactState"> -->
-          <select ng-model="mc.form.contactState">
+          <select ng-model="mc.form.contactState" name="state" required>{{myForm.state.$valid}}
             <option value="null" selected="selected">Select a State</option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
@@ -86,7 +85,7 @@
         </div>
         <div class="container-input">
           <label> Zip </label>
-          <input type="number" ng-model="mc.form.contactZip" ng-maxlength="5">
+          <input type="number" name="zip" ng-model="mc.form.contactZip" ng-maxlength="5" required>{{myForm.zip.$valid}}
         </div>
       </div>
 
@@ -98,7 +97,7 @@
 
         <div class="container-input">
           <label> Phone </label>
-          <input type="tel" ng-model="mc.form.contactPhone">
+          <input type="tel" name="phone" ng-model="mc.form.contactPhone" ng-maxlength="11" required>{{myForm.phone.$valid}}
         </div>
       </div>
     </section>
