@@ -11,11 +11,18 @@ const pdf = require('html-pdf');
 
 
 router.post('/sendEmail', function(req, res){
-
   let form = req.body;
-  console.log('data sent from user on front-end: ', form);
+  let html = '<span><h2> First Name: </h2><h3>' + form.firstName + '</h3></span>' +
+          '<span><h2> Last Name: </h2><h3>' + form.lastName + '</h3></span>' +
+          '<span><h2> Phone: </h2><h3>' + form.contactPhone + '</h3></span>' +
+          '<span><h2> Email: </h2><h3>' + form.contactEmail + '</h3></span>' +
+          '<span><h2> Address: </h2><h4>' + form.contactAddress + '<br>' +
+          form.contactCity + ' ' +  form.contactState + ', ' + form.contactZip + '</h4></span>' +
+          '<span><h2> Comments: </h2><p>' + form.comments + '</p></span>';
 
-  const html = fs.readFileSync('./server/templates/email.html', 'utf8'); // html-pdf html template
+          
+  // const html = require('../../server/templates/template.email.js');
+  // const html = fs.readFileSync('./server/templates/email.html', 'utf8'); // html-pdf html template
   const options = { format: 'Letter' }; // html-pdf options
 
   function sendEmail(form) {

@@ -84,8 +84,7 @@ form .container-input {
   width: 175px;
 }
 form textarea {
-  background-color: transparent;
-  color: #ffffff;
+  
 }
 form .button-container {
   display: flex;
