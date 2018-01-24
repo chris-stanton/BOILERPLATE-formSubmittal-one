@@ -80,11 +80,14 @@ form .container-input {
   width: 50px;
 }
 .container-input input, select {
-  height: 15px;
+  height: 18px;
   width: 175px;
 }
+.icon-validation {
+  height: 15px;
+}
 form textarea {
-  
+
 }
 form .button-container {
   display: flex;
@@ -95,6 +98,7 @@ form .button-container button {
   height: 30px;
   width: 80px;
   background-color: #1c44d0;
+  color: #ffffff;
 }
 
 

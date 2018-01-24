@@ -7,11 +7,19 @@
       <h6> Contact Name </h6>
       <div class="container-input">
         <label> First </label>
-        <input type="text" name="firstName" ng-model="mc.form.firstName" required>{{myForm.firstName.$valid}}
+        <input type="text" name="firstName" ng-model="mc.form.firstName" required>
+        <div ng-if="mc.form.firstName !== undefined">
+          <img ng-src="../assets/images/check.ico" ng-show="myForm.firstName.$valid == true" class="icon-validation">
+          <img ng-src="../assets/images/cross.ico" ng-show="myForm.firstName.$valid == false" class="icon-validation">
+        </div>
       </div>
       <div class="container-input">
         <label> Last </label>
-        <input type="text" name="lastName" ng-model="mc.form.lastName" required>{{myForm.lastName.$valid}}
+        <input type="text" name="lastName" ng-model="mc.form.lastName" required>
+        <div ng-if="mc.form.lastName !== undefined">
+          <img ng-src="../assets/images/check.ico" ng-show="myForm.lastName.$valid == true" class="icon-validation">
+          <img ng-src="../assets/images/cross.ico" ng-show="myForm.lastName.$valid == false" class="icon-validation">
+        </div>
       </div>
     </section>
 
@@ -20,11 +28,19 @@
       <div>
         <div class="container-input">
           <label> Street </label>
-          <input type="Address" name="street" ng-model="mc.form.contactAddress" required>{{myForm.street.$valid}}
+          <input type="Address" name="street" ng-model="mc.form.contactAddress" required>
+          <div ng-if="mc.form.contactAddress !== undefined">
+            <img ng-src="../assets/images/check.ico" ng-show="myForm.street.$valid == true" class="icon-validation">
+            <img ng-src="../assets/images/cross.ico" ng-show="myForm.street.$valid == false" class="icon-validation">
+          </div>
         </div>
         <div class="container-input">
           <label> City </label>
-          <input type="Address" name="city" ng-model="mc.form.contactCity" required>{{myForm.city.$valid}}
+          <input type="Address" name="city" ng-model="mc.form.contactCity" required>
+          <div ng-if="mc.form.contactCity !== undefined">
+            <img ng-src="../assets/images/check.ico" ng-show="myForm.city.$valid == true" class="icon-validation">
+            <img ng-src="../assets/images/cross.ico" ng-show="myForm.city.$valid == false" class="icon-validation">
+          </div>
         </div>
         <div class="container-input">
           <label> State </label>
@@ -82,22 +98,38 @@
             <option value="WI">Wisconsin</option>
             <option value="WY">Wyoming</option>
           </select>
+          <div ng-if="mc.form.contactState !== undefined">
+            <img ng-src="../assets/images/check.ico" ng-show="mc.form.contactState !== undefined && mc.form.contactState !== 'null'" class="icon-validation">
+            <img ng-src="../assets/images/cross.ico" ng-show="mc.form.contactState === undefined || mc.form.contactState === 'null'" class="icon-validation">
+          </div>
         </div>
         <div class="container-input">
           <label> Zip </label>
-          <input type="number" name="zip" ng-model="mc.form.contactZip" ng-maxlength="5" required>{{myForm.zip.$valid}}
+          <input type="number" name="zip" ng-model="mc.form.contactZip" ng-maxlength="5" required>
+          <div ng-if="mc.form.contactZip !== undefined">
+            <img ng-src="../assets/images/check.ico" ng-show="myForm.zip.$valid == true" class="icon-validation">
+            <img ng-src="../assets/images/cross.ico" ng-show="myForm.zip.$valid == false" class="icon-validation">
+          </div>
         </div>
       </div>
 
       <div>
         <div class="container-input">
           <label> Email </label>
-          <input type="email" name="email" ng-model="mc.form.contactEmail" required>{{myForm.email.$valid}}
+          <input type="email" name="email" ng-model="mc.form.contactEmail" required>
+          <div ng-if="mc.form.contactEmail !== undefined">
+            <img ng-src="../assets/images/check.ico" ng-show="myForm.email.$valid == true" class="icon-validation">
+            <img ng-src="../assets/images/cross.ico" ng-show="myForm.email.$valid == false" class="icon-validation">
+          </div>
         </div>
 
         <div class="container-input">
           <label> Phone </label>
-          <input type="tel" name="phone" ng-model="mc.form.contactPhone" ng-maxlength="11" required>{{myForm.phone.$valid}}
+          <input type="tel" name="phone" ng-model="mc.form.contactPhone" ng-maxlength="11" required>
+          <div ng-if="mc.form.contactPhone !== undefined">
+            <img ng-src="../assets/images/check.ico" ng-if="myForm.phone.$valid == true" class="icon-validation">
+            <img ng-src="../assets/images/cross.ico" ng-if="myForm.phone.$valid == false" class="icon-validation">
+          </div>
         </div>
       </div>
     </section>

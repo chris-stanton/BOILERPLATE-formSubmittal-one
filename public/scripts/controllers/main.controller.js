@@ -6,7 +6,6 @@ myApp.controller('MainController',['EmailFactory', '$scope', function(EmailFacto
   const self = this;
 
   self.submitRequest = (form) => {
-    self.form = {};
     console.log(form);
     if(form.firstName == undefined) {
       self.errorMessage = 'Missing First Name';
@@ -31,7 +30,7 @@ myApp.controller('MainController',['EmailFactory', '$scope', function(EmailFacto
       self.form = {};
     }
 
-  }
+  };
 
 
 
