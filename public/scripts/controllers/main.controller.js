@@ -27,7 +27,6 @@ myApp.controller('MainController',['EmailFactory', '$scope', function(EmailFacto
       self.errorMessage = 'Please complete the form';
     } else {
       EmailFactory.postForm(form);
-      self.form = {};
     }
 
   };
