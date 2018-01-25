@@ -16,9 +16,12 @@
   7. ExpressJS
   8. Body-parser
   9. PG
-  10. Dotenv
+  10. Dotenv-node
   11. Nodemailer
-  12. GIT / GitHub
+  12. Nodemailer-smtp-transport
+  13. Alertify.js
+  14. HTML-PDF
+  15. GIT / GitHub
 
 
 
