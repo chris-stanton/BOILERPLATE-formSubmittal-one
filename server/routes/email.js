@@ -37,7 +37,7 @@ router.post('/sendEmail', function(req, res){
     // setup email data with unicode symbols
     let mailOptions = {
       from: '"Chris Stanton Form Example One" <'+process.env.ACCOUNT_NAME+'>', // sender address
-      to: 'cstanton0760@yahoo.com', // list of receivers
+      to: 'development.testing84@yahoo.com', // list of receivers
       subject: 'Form Example One', // Subject line
       attachments: [
         {   // file on disk as an attachment
