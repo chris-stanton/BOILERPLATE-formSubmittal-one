@@ -11,6 +11,7 @@
     "dotenv-node": "0.0.2",
     "express": "4.15.2",
     "html-pdf": "2.2.0",
+    "hummus": "1.0.78",
     "nodemailer": "4.4.2",
     "nodemailer-smtp-transport": "2.7.4",
     "pg": "6.1.4"

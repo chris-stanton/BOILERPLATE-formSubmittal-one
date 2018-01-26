@@ -9,6 +9,7 @@ const port = process.env.PORT || 5000;
 
 // defining server side routes
 const email = require('./server/routes/email.js');
+const hummus = require('./server/routes/hummus.js');
 
 // server back static files
 app.use(express.static(path.join(__dirname, './public')));
@@ -23,6 +24,7 @@ app.get('/', (req, res) => {
 
 // server side routes
 app.use('/email', email);
+app.use('/hummus', hummus);
 
 // port listening
 app.listen(port, () => {

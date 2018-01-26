@@ -10,7 +10,7 @@ myApp.factory('EmailFactory',['$http', '$window', 'alertify',function($http, $wi
     alertify.success('Sending request')
     $http({
       method: 'POST',
-      url: '/email/sendEmail',
+      url: '/hummus/sendEmail',
       data: form
     }).then(function(response){
       alertify.success('Form has been submitted');
