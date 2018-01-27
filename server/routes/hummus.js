@@ -29,7 +29,6 @@ router.post('/sendEmail', function(req, res){
 
 
 
-
 });
 
 module.exports = router;
