@@ -12,7 +12,8 @@ router.post('/sendEmail', function(req, res){
 
 
 		var pdfWriter = hummus.createWriterToModify(__dirname + './vet.pdf', {
-			modifiedFilePath: __dirname + './server/pdf/'+ form.firstName + form.lastName + '.pdf'
+			modifiedFilePath: __dirname + './server/pdf/' + form.firstName + form.lastName + '.pdf',
+      log: './server/logs/hummus.logs.js'
 		});
 
 		var pageModifier = new hummus.PDFPageModifier(pdfWriter,0);

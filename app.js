@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 // handles index file separately
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '.public/index.html'));
+  res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
 // server side routes
