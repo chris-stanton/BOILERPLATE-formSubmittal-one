@@ -10,7 +10,6 @@ const hummus = require('hummus');
 router.post('/sendEmail', function(req, res){
   let form = req.body;
 
-
 		var pdfWriter = hummus.createWriterToModify(__dirname + '/survey.pdf', {
 			modifiedFilePath: __dirname + '/pdf/' + form.firstName + form.lastName + '.pdf',
       log: './server/logs/hummus.logs.js'
