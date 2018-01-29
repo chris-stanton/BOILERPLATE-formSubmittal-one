@@ -11,21 +11,29 @@ router.post('/sendEmail', function(req, res){
   let form = req.body;
 
 
-		var pdfWriter = hummus.createWriterToModify(__dirname + './vet.pdf', {
-			modifiedFilePath: __dirname + './server/pdf/' + form.firstName + form.lastName + '.pdf',
+		var pdfWriter = hummus.createWriterToModify(__dirname + '/survey.pdf', {
+			modifiedFilePath: __dirname + '/pdf/' + form.firstName + form.lastName + '.pdf',
       log: './server/logs/hummus.logs.js'
 		});
 
 		var pageModifier = new hummus.PDFPageModifier(pdfWriter,0);
 
+
     pageModifier.startContext().getContext().writeText(
-			'Test Text',
+			'TEST THIS WORKED TEST',
 			75, 805,
-			{size:14,colorspace:'grey',color:0x00}
+			{
+        font:pdfWriter.getFontForFile('./server/routes/arial.ttf'),
+        size:50,
+        color:'red',
+        colorspace:'grey'
+      }
 		);
+
 
 		pageModifier.endContext().writePage();
 		pdfWriter.end();
+
 
 
 
