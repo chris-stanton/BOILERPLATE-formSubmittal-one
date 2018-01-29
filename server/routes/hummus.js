@@ -10,7 +10,7 @@ const hummus = require('hummus');
 router.post('/sendEmail', function(req, res){
   let form = req.body;
 
-		var pdfWriter = hummus.createWriterToModify(__dirname + '/survey.pdf', {
+		var pdfWriter = hummus.createWriterToModify(__dirname + '/vet.pdf', {
 			modifiedFilePath: __dirname + '/pdf/' + form.firstName + form.lastName + '.pdf',
       log: './server/logs/hummus.logs.js'
 		});
@@ -20,10 +20,10 @@ router.post('/sendEmail', function(req, res){
 
     pageModifier.startContext().getContext().writeText(
 			'TEST THIS WORKED TEST',
-			75, 805,
+			0, 0,
 			{
         font:pdfWriter.getFontForFile('./server/routes/arial.ttf'),
-        size:50,
+        size:12,
         color:'red',
         colorspace:'grey'
       }
